@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cipher — Private, Peer-to-Peer Social Network</title>
+  <meta name="description" content="Cipher is a zero-knowledge, end-to-end encrypted social network that runs on your own infrastructure." />
+  <link rel="canonical" href="https://cipher.social/">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <input class="theme-checkbox" type="checkbox" id="theme-toggle" aria-label="Toggle light theme">
+  <div class="site">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">◐</span>
+          <span class="brand-name">Cipher</span>
+        </div>
+        <div class="header-controls">
+          <nav class="nav" aria-label="Primary navigation">
+            <input class="nav-checkbox" type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+            <label class="nav-toggle" for="nav-toggle">
+              <span class="sr-only">Menu</span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+              <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </label>
+            <ul id="primary-nav" class="nav-list">
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#architecture">Architecture</a></li>
+              <li><a href="#apps">Apps</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#get-started" class="cta-link">Get Started</a></li>
+            </ul>
+          </nav>
+          <label class="theme-toggle" for="theme-toggle">
+            <span class="sr-only">Toggle light or dark theme</span>
+            <span class="theme-toggle-track" aria-hidden="true"></span>
+            <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true">☀︎</span>
+            <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true">◐</span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="overview">
+        <div class="container hero-grid">
+          <div>
+            <span class="badge">BETA • Open Source</span>
+            <h1>Own your social graph with zero-knowledge privacy.</h1>
+            <p class="lead">Cipher is a decentralized social network built with Rails 8, peer-to-peer sync, and end-to-end encryption. Your data lives on hardware you control. Connections happen directly, not through a central broker.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#get-started">Join the Beta</a>
+              <a class="button secondary" href="https://github.com/aosmith/cipher">View the project</a>
+            </div>
+            <ul class="hero-meta">
+              <li>🔐 Zero-knowledge architecture</li>
+              <li>🌐 WebRTC-based peer networking</li>
+              <li>🖥️ Desktop bundles via Tauri</li>
+            </ul>
+          </div>
+          <div class="hero-card">
+            <h2>Private sync pipeline</h2>
+            <p>Rails orchestrates encrypted messages, Solid Queue keeps background jobs local, and WebRTC securely links trusted peers.</p>
+            <dl>
+              <div>
+                <dt>Latency</dt>
+                <dd>&lt;150ms direct peer handshakes</dd>
+              </div>
+              <div>
+                <dt>Storage</dt>
+                <dd>Local-first SQLite with Solid Cache</dd>
+              </div>
+              <div>
+                <dt>Security</dt>
+                <dd>Client-held keys, audited cryptography libs</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <h2>Why builders choose Cipher</h2>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>End-to-end encryption</h3>
+              <p>Messages are sealed with keys generated and stored client-side. Even servers only see ciphertext.</p>
+            </article>
+            <article class="feature">
+              <h3>P2P sync engine</h3>
+              <p>Solid Cable and WebRTC stream data directly between friends, minimizing infrastructure overhead.</p>
+            </article>
+            <article class="feature">
+              <h3>Zero-knowledge profiles</h3>
+              <p>Identity proofs are shared selectively; new sessions are bootstrapped through encrypted invitations.</p>
+            </article>
+            <article class="feature">
+              <h3>Cross-platform delivery</h3>
+              <p>Tauri desktop apps, mobile builds, and a responsive web UI share the same Rails foundations.</p>
+            </article>
+            <article class="feature">
+              <h3>Developer-first tooling</h3>
+              <p><code>bin/setup</code>, <code>bin/dev</code>, and <code>bin/reload</code> reduce onboarding friction so teams can focus on features.</p>
+            </article>
+            <article class="feature">
+              <h3>Kamal-ready deploys</h3>
+              <p>Kamal recipes ship with the repo, letting you promote personal nodes or shared clusters in minutes.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="architecture">
+        <div class="container">
+          <h2>Architecture at a glance</h2>
+          <div class="architecture-grid">
+            <div>
+              <h3>Rails core</h3>
+              <p>Modern Rails 8 stack with Hotwire, Solid Queue, and Propshaft serves the application layer and background jobs.</p>
+              <ul>
+                <li>Solid Queue keeps jobs on-box with predictable scheduling.</li>
+                <li>Solid Cache accelerates encrypted timelines without leaking plaintext.</li>
+                <li>Importmap keeps the frontend lightweight and dependency-free.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Peer overlay</h3>
+              <p>Using WebRTC and secure friend invitations, Cipher forms direct mesh links. Metadata is minimized, and relay fallback is optional.</p>
+              <ul>
+                <li>Automatic ICE negotiation and TURN opt-in.</li>
+                <li>Session keys rotate per conversation.</li>
+                <li>Offline-first queues flush as peers come online.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Desktop bundling</h3>
+              <p>Tauri wraps the Rails app in a minimal native shell. Rust handles window management while the Rails server runs locally.</p>
+              <ul>
+                <li>Single command <code>bin/desktop</code> for development.</li>
+                <li>Platform builds via platform-specific scripts.</li>
+                <li>Custom CSP tuned for the native WebView.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="apps">
+        <div class="container">
+          <h2>Build once, deliver everywhere</h2>
+          <div class="apps-grid">
+            <article>
+              <h3>Web</h3>
+              <p>Run <code>bin/dev</code> to launch the Rails development server with hot-reload and Turbo-powered interactions.</p>
+            </article>
+            <article>
+              <h3>Desktop</h3>
+              <p><code>bin/desktop</code> packages the app via Tauri, giving macOS, Windows, and Linux users a native experience.</p>
+            </article>
+            <article>
+              <h3>Mobile</h3>
+              <p>Shared Hotwire views keep mobile browsers fast today while native shells iterate in the <code>android</code> and <code>ios</code> tracks.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="security">
+        <div class="container security-card">
+          <div>
+            <h2>Security posture</h2>
+            <p class="security-status">Cipher is currently in public beta. Do not store sensitive data until independent audits complete.</p>
+            <ul>
+              <li>Cryptography standards follow libsodium and audited Rust crates.</li>
+              <li>Keys never leave the client; backups are opt-in and encrypted.</li>
+              <li>Security guides cover network isolation and hardening tips in <code>/docs</code>.</li>
+            </ul>
+          </div>
+          <aside>
+            <h3>Security resources</h3>
+            <ul>
+              <li><a href="https://github.com/aosmith/cipher/blob/main/ENCRYPTION_UPGRADE.md">Encryption upgrade plan</a></li>
+              <li><a href="https://github.com/aosmith/cipher/blob/main/DESIGN-SYSTEM-MIGRATION.md">Design system migration</a></li>
+              <li><a href="https://github.com/aosmith/cipher/blob/main/README-CROSS-PLATFORM.md">Cross-platform guide</a></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="get-started">
+        <div class="container callout">
+          <div>
+            <h2>Ready to run your own node?</h2>
+            <p>Clone the repository, run <code>bin/setup</code>, and invite trusted friends. Share feedback in issues to help steer the roadmap.</p>
+          </div>
+          <div class="callout-actions">
+            <a class="button primary" href="mailto:hello@cipher.social">Request beta access</a>
+            <a class="button secondary" href="https://github.com/aosmith/cipher">Explore the code</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <span class="brand-icon" aria-hidden="true">◐</span>
+          <span class="brand-name">Cipher</span>
+        </div>
+        <div>
+          <p>Encrypted, peer-to-peer social infrastructure you control.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/aosmith/cipher">Docs</a>
+          <a href="mailto:security@cipher.social">Security</a>
+          <a href="mailto:hello@cipher.social">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
