@@ -6,6 +6,13 @@
   <title>Cipher — Private, Peer-to-Peer Social Network</title>
   <meta name="description" content="Cipher is a zero-knowledge, end-to-end encrypted social network that runs on your own infrastructure." />
   <link rel="canonical" href="https://cipher.social/">
+
+  <!-- Favicon and icons -->
+  <link rel="icon" type="image/x-icon" href="assets/icons/icon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon.png">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -15,7 +22,7 @@
     <header class="site-header">
       <div class="container">
         <div class="brand">
-          <span class="brand-icon" aria-hidden="true">◐</span>
+          <img src="assets/icons/icon.svg" alt="Cipher" class="brand-icon">
           <span class="brand-name">Cipher</span>
         </div>
         <div class="header-controls">
@@ -30,9 +37,7 @@
             <ul id="primary-nav" class="nav-list">
               <li><a href="#overview">Overview</a></li>
               <li><a href="#features">Features</a></li>
-              <li><a href="#architecture">Architecture</a></li>
-              <li><a href="#apps">Apps</a></li>
-              <li><a href="#security">Security</a></li>
+              <li><a href="#apps">Download</a></li>
               <li><a href="#get-started" class="cta-link">Get Started</a></li>
             </ul>
           </nav>
@@ -51,157 +56,109 @@
         <div class="container hero-grid">
           <div>
             <span class="badge">BETA • Open Source</span>
-            <h1>Own your social graph with zero-knowledge privacy.</h1>
-            <p class="lead">Cipher is a decentralized social network built with Rust/Tauri, peer-to-peer sync, and end-to-end encryption. Your data lives on hardware you control. Connections happen directly, not through a central broker.</p>
+            <h1>Encrypted peer-to-peer social platform.</h1>
+            <p class="lead">Share posts, photos, and messages directly with friends. All content is encrypted end-to-end with no central servers.</p>
             <div class="hero-actions">
-              <a class="button primary" href="#get-started">Join the Beta</a>
-              <a class="button secondary" href="https://github.com/aosmith/cipher">View the project</a>
+              <a class="button primary" href="#get-started">Try it now</a>
+              <a class="button secondary" href="https://github.com/aosmith/cipher">View source</a>
             </div>
             <ul class="hero-meta">
-              <li>🔐 Zero-knowledge architecture</li>
-              <li>🌐 WebRTC-based peer networking</li>
-              <li>🖥️ Desktop bundles via Tauri</li>
+              <li>🔐 End-to-end encryption</li>
+              <li>🌐 Peer-to-peer networking</li>
+              <li>🖥️ Local data storage</li>
             </ul>
           </div>
           <div class="hero-card">
-            <h2>Private sync pipeline</h2>
-            <p>Rust/Tauri orchestrates encrypted messages, SQLite keeps data local, and WebRTC securely links trusted peers.</p>
+            <h2>How it works</h2>
+            <p>Install the desktop app. Posts, photos, and messages are encrypted locally before transmission and sent directly to friends via WebRTC.</p>
             <dl>
               <div>
-                <dt>Latency</dt>
-                <dd>&lt;150ms direct peer handshakes</dd>
+                <dt>Encryption</dt>
+                <dd>All content encrypted with recipient's public key</dd>
+              </div>
+              <div>
+                <dt>Transport</dt>
+                <dd>Direct P2P connections via WebRTC</dd>
               </div>
               <div>
                 <dt>Storage</dt>
-                <dd>Local-first SQLite with Rust persistence</dd>
-              </div>
-              <div>
-                <dt>Security</dt>
-                <dd>Client-held keys, audited cryptography libs</dd>
+                <dd>Local SQLite database, no cloud sync</dd>
               </div>
             </dl>
           </div>
         </div>
       </section>
 
-      <section class="section" id="features">
+      <section class="section alt" id="features">
         <div class="container">
-          <h2>Why builders choose Cipher</h2>
+          <div class="section-header">
+            <h2>Features</h2>
+            <p class="section-subtitle">Decentralized social platform with strong encryption</p>
+          </div>
           <div class="feature-grid">
             <article class="feature">
+              <div class="feature-icon">🔐</div>
               <h3>End-to-end encryption</h3>
-              <p>Messages are sealed with keys generated and stored client-side. Even servers only see ciphertext.</p>
+              <p>Posts, photos, and messages are encrypted locally with Ed25519 keys. Only recipients can decrypt them.</p>
             </article>
             <article class="feature">
-              <h3>P2P sync engine</h3>
-              <p>Rust networking and WebRTC stream data directly between friends, minimizing infrastructure overhead.</p>
+              <div class="feature-icon">🌐</div>
+              <h3>Peer-to-peer networking</h3>
+              <p>Direct WebRTC connections between devices. No central servers route content.</p>
             </article>
             <article class="feature">
-              <h3>Zero-knowledge profiles</h3>
-              <p>Identity proofs are shared selectively; new sessions are bootstrapped through encrypted invitations.</p>
+              <div class="feature-icon">👤</div>
+              <h3>Invite-only contacts</h3>
+              <p>Add friends through encrypted invitations. No public discovery or random contacts.</p>
             </article>
             <article class="feature">
-              <h3>Cross-platform delivery</h3>
-              <p>Tauri desktop apps, mobile builds, and a responsive web UI share the same Rust foundations.</p>
+              <div class="feature-icon">📱</div>
+              <h3>Cross-platform desktop</h3>
+              <p>Native app built with Tauri. Runs on Windows, macOS, and Linux.</p>
             </article>
             <article class="feature">
-              <h3>Developer-first tooling</h3>
-              <p><code>cargo build</code>, <code>cargo tauri dev</code>, and comprehensive test suite reduce onboarding friction so teams can focus on features.</p>
+              <div class="feature-icon">⚡</div>
+              <h3>Open source</h3>
+              <p>Written in Rust. Full source code available on GitHub for auditing.</p>
             </article>
             <article class="feature">
-              <h3>Self-contained deployment</h3>
-              <p>Cross-platform builds ship with the repo, letting you run personal nodes on any device in minutes.</p>
+              <div class="feature-icon">🚀</div>
+              <h3>Offline-first</h3>
+              <p>Content queues locally when peers are offline. Syncs when they reconnect.</p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="architecture">
-        <div class="container">
-          <h2>Architecture at a glance</h2>
-          <div class="architecture-grid">
-            <div>
-              <h3>Rust core</h3>
-              <p>Modern Rust/Tauri stack with SQLite, Ed25519 cryptography, and WebRTC serves the application layer and P2P networking.</p>
-              <ul>
-                <li>SQLite keeps data local with comprehensive test coverage.</li>
-                <li>Ed25519/X25519 encryption secures all communications.</li>
-                <li>Pure Rust implementation ensures memory safety and performance.</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Peer overlay</h3>
-              <p>Using WebRTC and secure friend invitations, Cipher forms direct mesh links. Metadata is minimized, and relay fallback is optional.</p>
-              <ul>
-                <li>Automatic ICE negotiation and TURN opt-in.</li>
-                <li>Session keys rotate per conversation.</li>
-                <li>Offline-first queues flush as peers come online.</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Desktop bundling</h3>
-              <p>Tauri wraps the Rust app in a minimal native shell. Cross-platform builds support macOS, Windows, Linux, iOS, and Android.</p>
-              <ul>
-                <li>Single command <code>cargo tauri dev</code> for development.</li>
-                <li>Platform builds via <code>cargo tauri build</code> commands.</li>
-                <li>Native performance with WebView frontend.</li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="apps">
         <div class="container">
-          <h2>Build once, deliver everywhere</h2>
+          <h2>Available platforms</h2>
           <div class="apps-grid">
             <article>
-              <h3>Web</h3>
-              <p>Run <code>cargo tauri dev</code> to launch the Rust development server with hot-reload and native WebView rendering.</p>
+              <h3>Windows</h3>
+              <p>Download and install the desktop app for Windows.</p>
             </article>
             <article>
-              <h3>Desktop</h3>
-              <p><code>cargo tauri build</code> packages the app via Tauri, giving macOS, Windows, and Linux users a native experience.</p>
+              <h3>macOS</h3>
+              <p>Native app for Mac computers.</p>
             </article>
             <article>
-              <h3>Mobile</h3>
-              <p>Cross-platform Rust builds support iOS and Android with native performance and the same codebase as desktop.</p>
+              <h3>Linux</h3>
+              <p>Works on all major Linux distributions.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section alt" id="security">
-        <div class="container security-card">
-          <div>
-            <h2>Security posture</h2>
-            <p class="security-status">Cipher is currently in private beta. Do not store sensitive data until independent audits complete.</p>
-            <ul>
-              <li>Cryptography standards follow Ed25519/X25519 and audited Rust crates.</li>
-              <li>Keys never leave the client; backups are opt-in and encrypted.</li>
-              <li>Comprehensive test suite covers cryptography and P2P security.</li>
-            </ul>
-          </div>
-          <aside>
-            <h3>Security resources</h3>
-            <ul>
-              <li><a href="https://github.com/aosmith/cipher/blob/main/ENCRYPTION_UPGRADE.md">Encryption upgrade plan</a></li>
-              <li><a href="https://github.com/aosmith/cipher/blob/main/DESIGN-SYSTEM-MIGRATION.md">Design system migration</a></li>
-              <li><a href="https://github.com/aosmith/cipher/blob/main/README-CROSS-PLATFORM.md">Cross-platform guide</a></li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section" id="get-started">
+      <section class="section alt" id="get-started">
         <div class="container callout">
           <div>
-            <h2>Ready to run your own node?</h2>
-            <p>Clone the repository, run <code>cargo tauri dev</code>, and invite trusted friends. Share feedback in issues to help steer the roadmap.</p>
+            <h2>Try Cipher today</h2>
+            <p>Cipher is in beta. Download it, try it out, and let us know what you think.</p>
           </div>
           <div class="callout-actions">
-            <a class="button primary" href="https://github.com/aosmith/cipher">View code</a>
-            <a class="button secondary" href="https://github.com/aosmith/cipher">Explore the code</a>
+            <a class="button primary" href="https://github.com/aosmith/cipher">Download</a>
+            <a class="button secondary" href="https://github.com/aosmith/cipher">View source code</a>
           </div>
         </div>
       </section>
@@ -210,11 +167,11 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <span class="brand-icon" aria-hidden="true">◐</span>
+          <img src="assets/icons/icon.svg" alt="Cipher" class="brand-icon">
           <span class="brand-name">Cipher</span>
         </div>
         <div>
-          <p>Encrypted, peer-to-peer social infrastructure you control.</p>
+          <p>Encrypted social platform that puts you in control.</p>
         </div>
         <div class="footer-links">
           <a href="https://github.com/aosmith/cipher">Docs</a>

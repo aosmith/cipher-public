@@ -1,0 +1,47 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="backgroundGradient" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" style="stop-color:#7dd3fc"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Circular background -->
+  <circle cx="256" cy="256" r="256" fill="url(#backgroundGradient)"/>
+
+  <!-- Network nodes and connections -->
+  <g stroke="#ff6b9d" stroke-width="4" fill="#ff6b9d" opacity="0.9">
+    <!-- Ring of connected nodes -->
+    <circle cx="256" cy="100" r="10"/>
+    <circle cx="356" cy="156" r="10"/>
+    <circle cx="356" cy="356" r="10"/>
+    <circle cx="256" cy="412" r="10"/>
+    <circle cx="156" cy="356" r="10"/>
+    <circle cx="156" cy="156" r="10"/>
+
+    <!-- Ring connections -->
+    <line x1="256" y1="100" x2="356" y2="156"/>
+    <line x1="356" y1="156" x2="356" y2="356"/>
+    <line x1="356" y1="356" x2="256" y2="412"/>
+    <line x1="256" y1="412" x2="156" y2="356"/>
+    <line x1="156" y1="356" x2="156" y2="156"/>
+    <line x1="156" y1="156" x2="256" y2="100"/>
+
+    <!-- Cross connections for mesh -->
+    <line x1="256" y1="100" x2="256" y2="412"/>
+    <line x1="156" y1="156" x2="356" y2="356"/>
+    <line x1="356" y1="156" x2="156" y2="356"/>
+  </g>
+
+  <!-- Large central lock -->
+  <!-- Lock body -->
+  <rect x="186" y="226" width="140" height="100" rx="20" fill="white" stroke="#1f2937" stroke-width="6"/>
+
+  <!-- Lock shackle -->
+  <path d="M206 226 L206 186 Q206 146 256 146 Q306 146 306 186 L306 226"
+        fill="none" stroke="#1f2937" stroke-width="8"/>
+
+  <!-- Lock keyhole -->
+  <circle cx="256" cy="276" r="16" fill="#1f2937"/>
+  <rect x="246" y="276" width="20" height="30" fill="#1f2937"/>
+</svg>

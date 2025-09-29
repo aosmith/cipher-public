@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/alex/Development/cipher/**)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate technology stack references from Rails to Rust/Tauri\n\nComprehensive update to reflect the new Rust-based architecture:\n- Replace Rails 8 mentions with Rust/Tauri stack\n- Update Solid Queue/Cache references to SQLite and Rust persistence  \n- Change Hotwire/Importmap to native WebRTC and Rust networking\n- Update developer commands from bin/* to cargo tauri commands\n- Replace Kamal deployment with self-contained cross-platform builds\n- Update cryptography mentions to Ed25519/X25519 standards\n- Modernize mobile strategy to native Rust builds for iOS/Android\n\nThis change aligns the landing page copy with the actual technical \nimplementation and provides accurate developer onboarding information.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git tag:*)",
+      "Bash(git push:*)",
+      "Bash(python3:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
