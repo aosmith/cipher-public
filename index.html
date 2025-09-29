@@ -52,7 +52,7 @@
           <div>
             <span class="badge">BETA • Open Source</span>
             <h1>Own your social graph with zero-knowledge privacy.</h1>
-            <p class="lead">Cipher is a decentralized social network built with Rails 8, peer-to-peer sync, and end-to-end encryption. Your data lives on hardware you control. Connections happen directly, not through a central broker.</p>
+            <p class="lead">Cipher is a decentralized social network built with Rust/Tauri, peer-to-peer sync, and end-to-end encryption. Your data lives on hardware you control. Connections happen directly, not through a central broker.</p>
             <div class="hero-actions">
               <a class="button primary" href="#get-started">Join the Beta</a>
               <a class="button secondary" href="https://github.com/aosmith/cipher">View the project</a>
@@ -65,7 +65,7 @@
           </div>
           <div class="hero-card">
             <h2>Private sync pipeline</h2>
-            <p>Rails orchestrates encrypted messages, Solid Queue keeps background jobs local, and WebRTC securely links trusted peers.</p>
+            <p>Rust/Tauri orchestrates encrypted messages, SQLite keeps data local, and WebRTC securely links trusted peers.</p>
             <dl>
               <div>
                 <dt>Latency</dt>
@@ -73,7 +73,7 @@
               </div>
               <div>
                 <dt>Storage</dt>
-                <dd>Local-first SQLite with Solid Cache</dd>
+                <dd>Local-first SQLite with Rust persistence</dd>
               </div>
               <div>
                 <dt>Security</dt>
@@ -94,7 +94,7 @@
             </article>
             <article class="feature">
               <h3>P2P sync engine</h3>
-              <p>Solid Cable and WebRTC stream data directly between friends, minimizing infrastructure overhead.</p>
+              <p>Rust networking and WebRTC stream data directly between friends, minimizing infrastructure overhead.</p>
             </article>
             <article class="feature">
               <h3>Zero-knowledge profiles</h3>
@@ -102,15 +102,15 @@
             </article>
             <article class="feature">
               <h3>Cross-platform delivery</h3>
-              <p>Tauri desktop apps, mobile builds, and a responsive web UI share the same Rails foundations.</p>
+              <p>Tauri desktop apps, mobile builds, and a responsive web UI share the same Rust foundations.</p>
             </article>
             <article class="feature">
               <h3>Developer-first tooling</h3>
-              <p><code>bin/setup</code>, <code>bin/dev</code>, and <code>bin/reload</code> reduce onboarding friction so teams can focus on features.</p>
+              <p><code>cargo build</code>, <code>cargo tauri dev</code>, and comprehensive test suite reduce onboarding friction so teams can focus on features.</p>
             </article>
             <article class="feature">
-              <h3>Kamal-ready deploys</h3>
-              <p>Kamal recipes ship with the repo, letting you promote personal nodes or shared clusters in minutes.</p>
+              <h3>Self-contained deployment</h3>
+              <p>Cross-platform builds ship with the repo, letting you run personal nodes on any device in minutes.</p>
             </article>
           </div>
         </div>
@@ -121,12 +121,12 @@
           <h2>Architecture at a glance</h2>
           <div class="architecture-grid">
             <div>
-              <h3>Rails core</h3>
-              <p>Modern Rails 8 stack with Hotwire, Solid Queue, and Propshaft serves the application layer and background jobs.</p>
+              <h3>Rust core</h3>
+              <p>Modern Rust/Tauri stack with SQLite, Ed25519 cryptography, and WebRTC serves the application layer and P2P networking.</p>
               <ul>
-                <li>Solid Queue keeps jobs on-box with predictable scheduling.</li>
-                <li>Solid Cache accelerates encrypted timelines without leaking plaintext.</li>
-                <li>Importmap keeps the frontend lightweight and dependency-free.</li>
+                <li>SQLite keeps data local with comprehensive test coverage.</li>
+                <li>Ed25519/X25519 encryption secures all communications.</li>
+                <li>Pure Rust implementation ensures memory safety and performance.</li>
               </ul>
             </div>
             <div>
@@ -140,11 +140,11 @@
             </div>
             <div>
               <h3>Desktop bundling</h3>
-              <p>Tauri wraps the Rails app in a minimal native shell. Rust handles window management while the Rails server runs locally.</p>
+              <p>Tauri wraps the Rust app in a minimal native shell. Cross-platform builds support macOS, Windows, Linux, iOS, and Android.</p>
               <ul>
-                <li>Single command <code>bin/desktop</code> for development.</li>
-                <li>Platform builds via platform-specific scripts.</li>
-                <li>Custom CSP tuned for the native WebView.</li>
+                <li>Single command <code>cargo tauri dev</code> for development.</li>
+                <li>Platform builds via <code>cargo tauri build</code> commands.</li>
+                <li>Native performance with WebView frontend.</li>
               </ul>
             </div>
           </div>
@@ -157,15 +157,15 @@
           <div class="apps-grid">
             <article>
               <h3>Web</h3>
-              <p>Run <code>bin/dev</code> to launch the Rails development server with hot-reload and Turbo-powered interactions.</p>
+              <p>Run <code>cargo tauri dev</code> to launch the Rust development server with hot-reload and native WebView rendering.</p>
             </article>
             <article>
               <h3>Desktop</h3>
-              <p><code>bin/desktop</code> packages the app via Tauri, giving macOS, Windows, and Linux users a native experience.</p>
+              <p><code>cargo tauri build</code> packages the app via Tauri, giving macOS, Windows, and Linux users a native experience.</p>
             </article>
             <article>
               <h3>Mobile</h3>
-              <p>Shared Hotwire views keep mobile browsers fast today while native shells iterate in the <code>android</code> and <code>ios</code> tracks.</p>
+              <p>Cross-platform Rust builds support iOS and Android with native performance and the same codebase as desktop.</p>
             </article>
           </div>
         </div>
@@ -177,9 +177,9 @@
             <h2>Security posture</h2>
             <p class="security-status">Cipher is currently in private beta. Do not store sensitive data until independent audits complete.</p>
             <ul>
-              <li>Cryptography standards follow libsodium and audited Rust crates.</li>
+              <li>Cryptography standards follow Ed25519/X25519 and audited Rust crates.</li>
               <li>Keys never leave the client; backups are opt-in and encrypted.</li>
-              <li>Security guides cover network isolation and hardening tips in <code>/docs</code>.</li>
+              <li>Comprehensive test suite covers cryptography and P2P security.</li>
             </ul>
           </div>
           <aside>
@@ -197,7 +197,7 @@
         <div class="container callout">
           <div>
             <h2>Ready to run your own node?</h2>
-            <p>Clone the repository, run <code>bin/setup</code>, and invite trusted friends. Share feedback in issues to help steer the roadmap.</p>
+            <p>Clone the repository, run <code>cargo tauri dev</code>, and invite trusted friends. Share feedback in issues to help steer the roadmap.</p>
           </div>
           <div class="callout-actions">
             <a class="button primary" href="https://github.com/aosmith/cipher">View code</a>
