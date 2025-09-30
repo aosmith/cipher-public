@@ -15,7 +15,8 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nAdd mobile platforms and improve design with golden ratio spacing\n\nPlatform improvements:\n- Add Android and iOS to available platforms section\n- Replace emoji icons with proper F/OSS SVG icons from Bootstrap Icons\n- Create dedicated platform icons directory with Windows, Apple, Linux, Android, and phone SVGs\n- Update responsive grid layout to handle 5 platform cards elegantly\n\nDesign enhancements:\n- Apply golden ratio spacing (φ = 1.618) throughout platforms section\n- Use 2.618rem gap between cards and 1.618rem internal spacing\n- Add proper section header with subtitle for consistency\n- Improve visual hierarchy with golden ratio proportions\n\nContent updates:\n- Update hero copy to mention desktop and mobile apps\n- Change footer credit to \"Made by Thingg.co\" for cleaner branding\n- Ensure mobile platforms are properly represented in messaging\n\nThe platforms section now showcases all five supported platforms\nwith proper F/OSS iconography and mathematically pleasing spacing.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git commit:*)",
       "Bash(lsof:*)",
-      "Bash(xargs kill:*)"
+      "Bash(xargs kill:*)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []
