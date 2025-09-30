@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cipher - Encrypted Social Network | Private Messaging & File Sharing</title>
-  <meta name="description" content="Secure social platform with end-to-end encryption. Share posts, photos, and messages privately with friends. No data collection, open source." />
-  <meta name="keywords" content="encrypted social network, private messaging, secure file sharing, peer to peer, open source social media, privacy focused">
+  <meta name="description" content="Secure social platform with end-to-end encryption and native CPH token economy. Share posts, photos, and messages privately. Anti-spam protection and content monetization built-in. No data collection, open source." />
+  <meta name="keywords" content="encrypted social network, private messaging, secure file sharing, peer to peer, open source social media, privacy focused, token economy, CPH token, content monetization, spam prevention">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -36,7 +36,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Cipher",
-    "description": "Secure social platform with end-to-end encryption for private messaging and file sharing",
+    "description": "Secure social platform with end-to-end encryption and native CPH token economy for spam prevention and content monetization",
     "url": "https://cipher.social",
     "applicationCategory": "SocialNetworkingApplication",
     "operatingSystem": ["Windows", "macOS", "Linux", "Android", "iOS"],
@@ -54,6 +54,13 @@
     "featureList": [
       "End-to-end encryption",
       "Peer-to-peer networking",
+      "Native CPH token economy",
+      "Economic spam prevention",
+      "Content monetization",
+      "Reputation staking system",
+      "Proof-of-work mining",
+      "Payment channels",
+      "Anti-gaming protection",
       "Cross-platform support",
       "Open source",
       "Privacy focused"
@@ -83,6 +90,7 @@
             <ul id="primary-nav" class="nav-list">
               <li><a href="#overview">Overview</a></li>
               <li><a href="#features">Features</a></li>
+              <li><a href="#token-economy">Token Economy</a></li>
               <li><a href="#apps">Download</a></li>
               <li><a href="#get-started" class="cta-link">Get Started</a></li>
             </ul>
@@ -101,9 +109,9 @@
       <section class="hero" id="overview">
         <div class="container hero-grid">
           <div>
-            <span class="badge">BETA • Open Source</span>
-            <h1>Encrypted peer-to-peer social platform.</h1>
-            <p class="lead">Share posts, photos, and messages directly with friends. All content is encrypted end-to-end with no central servers.</p>
+            <span class="badge">BETA • Open Source • v0.10.0</span>
+            <h1>Encrypted peer-to-peer social platform with native token economy.</h1>
+            <p class="lead">Share posts, photos, and messages directly with friends. Built-in CPH token system prevents spam and enables content monetization. All content is encrypted end-to-end with no central servers.</p>
             <div class="hero-actions">
               <a class="button primary" href="#get-started">Try it now</a>
               <a class="button secondary" href="https://github.com/aosmith/cipher">View source</a>
@@ -111,6 +119,7 @@
             <ul class="hero-meta">
               <li>🔐 End-to-end encryption</li>
               <li>🌐 Peer-to-peer networking</li>
+              <li>💎 Native CPH token economy</li>
               <li>📱 Desktop and mobile apps</li>
             </ul>
           </div>
@@ -154,8 +163,8 @@
             </article>
             <article class="feature">
               <div class="feature-icon">👤</div>
-              <h3>Invite-only contacts</h3>
-              <p>Add friends through encrypted invitations. No public discovery or random contacts.</p>
+              <h3>Reputation system</h3>
+              <p>Build reputation through staking CPH tokens. Higher reputation earns fee discounts up to 50%.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">📱</div>
@@ -169,14 +178,76 @@
             </article>
             <article class="feature">
               <div class="feature-icon">🚀</div>
-              <h3>Offline-first</h3>
-              <p>Content queues locally when peers are offline. Syncs when they reconnect.</p>
+              <h3>Self-regulating network</h3>
+              <p>Economic incentives naturally prevent spam and abuse without central moderation.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="apps">
+      <section class="section" id="token-economy">
+        <div class="container">
+          <div class="section-header">
+            <h2>Token Economy (CPH)</h2>
+            <p class="section-subtitle">Built-in economic incentives for spam prevention and content monetization</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature">
+              <div class="feature-icon">💰</div>
+              <h3>1,000 CPH starter balance</h3>
+              <p>New users receive 1,000 Cipher Tokens to start interacting immediately. Mine up to 100 CPH daily through proof-of-work.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🛡️</div>
+              <h3>Economic spam prevention</h3>
+              <p>Small transaction fees (0.001 CPH per message) make bulk spam economically infeasible while keeping normal use free.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">⚡</div>
+              <h3>Payment channels</h3>
+              <p>Off-chain micropayments enable instant, fee-less transactions between friends using Plasma-inspired channels.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">💎</div>
+              <h3>Content monetization</h3>
+              <p>Set prices for premium content, enable tips, or offer subscriptions. Creators keep 100% of earnings.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">⛏️</div>
+              <h3>Fair mining distribution</h3>
+              <p>SHA-256 proof-of-work mining with Bitcoin-style halving ensures ongoing token distribution without central control.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🤖</div>
+              <h3>Anti-gaming protection</h3>
+              <p>Advanced pattern detection prevents wash trading, Sybil attacks, bot farms, and collusion through behavioral analysis.</p>
+            </article>
+          </div>
+          <div class="hero-card" style="margin-top: 3rem;">
+            <h3>Dynamic fee structure</h3>
+            <dl>
+              <div>
+                <dt>Messages</dt>
+                <dd>0.001 CPH base fee (priority options available)</dd>
+              </div>
+              <div>
+                <dt>Posts</dt>
+                <dd>0.01 CPH (boostable for visibility)</dd>
+              </div>
+              <div>
+                <dt>Reputation staking</dt>
+                <dd>Stake tokens for up to 50% fee discounts</dd>
+              </div>
+              <div>
+                <dt>Mining rewards</dt>
+                <dd>50 CPH per block, halving every 210,000 blocks</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="apps">
         <div class="container">
           <div class="section-header">
             <h2>Available platforms</h2>
