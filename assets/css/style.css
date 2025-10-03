@@ -30,7 +30,6 @@ body {
               radial-gradient(circle at 80% 0%, rgba(92, 169, 255, 0.18), transparent),
               var(--bg);
   color: var(--text);
-  transition: background 200ms ease, color 200ms ease;
 }
 
 .theme-checkbox {
@@ -141,7 +140,6 @@ body {
   backdrop-filter: blur(12px);
   background: linear-gradient(90deg, rgba(8, 8, 16, 0.82), rgba(8, 8, 16, 0.6));
   border-bottom: 1px solid var(--border);
-  transition: background 200ms ease, border 200ms ease;
 }
 
 .site-header .container {
@@ -214,7 +212,6 @@ body {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
-  transition: color 150ms ease;
 }
 
 .nav-list a:hover,
@@ -240,7 +237,6 @@ body {
   height: 2px;
   background: var(--text);
   border-radius: 1px;
-  transition: transform 150ms ease, opacity 150ms ease, background 200ms ease;
 }
 
 .hero {
@@ -305,7 +301,6 @@ h3 {
   border-radius: 0.9rem;
   text-decoration: none;
   font-weight: 600;
-  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
 .button.primary {
@@ -341,7 +336,6 @@ h3 {
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: var(--shadow);
-  transition: background 200ms ease, border 200ms ease, color 200ms ease;
 }
 
 .hero-card dl {
@@ -371,7 +365,6 @@ h3 {
   background: linear-gradient(180deg, rgba(124, 92, 255, 0.08), transparent 65%),
               var(--bg-alt);
   border-block: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background 200ms ease, border 200ms ease;
 }
 
 .section-header {
@@ -423,7 +416,6 @@ h3 {
   min-height: 190px;
   width: 100%;
   max-width: 300px;
-  transition: transform 140ms ease, border 140ms ease, background 200ms ease;
   text-align: center;
 }
 
@@ -484,7 +476,6 @@ h3 {
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: transform 200ms ease;
 }
 
 .platform-card:hover {
@@ -497,7 +488,6 @@ h3 {
   border-radius: 1.25rem;
   padding: 1.618rem;
   backdrop-filter: blur(12px);
-  transition: background 200ms ease, border 200ms ease, color 200ms ease;
   text-align: center;
   width: 100%;
   max-width: 200px;
@@ -530,7 +520,6 @@ h3 {
   border-radius: 1.25rem;
   padding: 1.75rem;
   backdrop-filter: blur(12px);
-  transition: background 200ms ease, border 200ms ease, color 200ms ease;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 2rem;
@@ -544,7 +533,6 @@ h3 {
   border-radius: 0.9rem;
   padding: 1rem;
   font-weight: 600;
-  transition: background 200ms ease, border 200ms ease, color 200ms ease;
 }
 
 .security-card a {
@@ -567,14 +555,12 @@ h3 {
   padding: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: var(--shadow);
-  transition: background 200ms ease, border 200ms ease;
 }
 
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2.5rem 0;
   background: rgba(8, 8, 16, 0.9);
-  transition: background 200ms ease, border 200ms ease;
 }
 
 .footer-grid {
@@ -592,7 +578,6 @@ h3 {
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
-  transition: color 150ms ease;
 }
 
 .footer-links a:hover,
@@ -635,7 +620,6 @@ h3 {
   color: var(--primary-accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  transition: color 150ms ease, border-color 150ms ease;
 }
 
 .footer-credit a:hover,
@@ -675,14 +659,12 @@ h3 {
   border-radius: 999px;
   background: rgba(124, 92, 255, 0.25);
   border: 1px solid rgba(124, 92, 255, 0.4);
-  transition: background 200ms ease, border 200ms ease, box-shadow 200ms ease;
   box-shadow: 0 0 20px var(--glow-moon);
 }
 
 .theme-toggle-icon {
   font-size: 0.9rem;
   position: absolute;
-  transition: transform 200ms ease, opacity 200ms ease;
 }
 
 .theme-toggle-icon--sun {
@@ -751,8 +733,7 @@ h3 {
     transform: scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transition: transform 150ms ease, opacity 150ms ease, background 200ms ease;
-    margin: 0;
+      margin: 0;
   }
 
   .nav-checkbox:checked + .nav-toggle + .nav-list {
