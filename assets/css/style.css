@@ -317,7 +317,6 @@ h3 {
 
 .button:hover,
 .button:focus {
-  transform: translateY(-2px);
 }
 
 .hero-meta {
