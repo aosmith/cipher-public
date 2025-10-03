@@ -39,7 +39,7 @@
     "description": "Secure social platform with end-to-end encryption and built-in abuse prevention system",
     "url": "https://cipher.social",
     "applicationCategory": "SocialNetworkingApplication",
-    "operatingSystem": ["Windows", "macOS", "Linux", "Android", "iOS"],
+    "operatingSystem": ["macOS", "Linux", "Android"],
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -227,20 +227,12 @@
             <p class="section-subtitle">Download Cipher for your device</p>
           </div>
           <div class="apps-grid">
-            <a href="#" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/windows.svg" alt="Windows">
-                </div>
-                <h3>Windows</h3>
-              </article>
-            </a>
             <a href="https://github.com/aosmith/cipher/raw/main/releases/latest.dmg" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/apple.svg" alt="Apple">
                 </div>
-                <h3>macOS</h3>
+                <h3>macOS (ARM)</h3>
               </article>
             </a>
             <a href="#" class="platform-card">
@@ -248,7 +240,15 @@
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/linux.svg" alt="Linux">
                 </div>
-                <h3>Linux</h3>
+                <h3>Linux (x86)</h3>
+              </article>
+            </a>
+            <a href="#" class="platform-card">
+              <article>
+                <div class="platform-icon">
+                  <img src="assets/icons/platforms/linux.svg" alt="Linux">
+                </div>
+                <h3>Linux (ARM)</h3>
               </article>
             </a>
             <a href="https://github.com/aosmith/cipher/raw/main/releases/latest.apk" class="platform-card">
@@ -257,14 +257,6 @@
                   <img src="assets/icons/platforms/android.svg" alt="Android">
                 </div>
                 <h3>Android</h3>
-              </article>
-            </a>
-            <a href="#" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/phone.svg" alt="iOS">
-                </div>
-                <h3>iOS</h3>
               </article>
             </a>
           </div>
@@ -317,18 +309,12 @@
       if (/android/.test(userAgent)) {
         downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/latest.apk';
         downloadText = 'Download for Android';
-      } else if (/iphone|ipad|ipod/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher';
-        downloadText = 'iOS (Coming Soon)';
       } else if (/mac/.test(platform) || /macintosh/.test(userAgent)) {
         downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/latest.dmg';
-        downloadText = 'Download for macOS';
-      } else if (/win/.test(platform)) {
-        downloadUrl = 'https://github.com/aosmith/cipher';
-        downloadText = 'Windows (Coming Soon)';
+        downloadText = 'Download for macOS (ARM)';
       } else if (/linux/.test(platform)) {
         downloadUrl = 'https://github.com/aosmith/cipher';
-        downloadText = 'Linux (Coming Soon)';
+        downloadText = 'Download for Linux';
       }
 
       downloadBtn.href = downloadUrl;
