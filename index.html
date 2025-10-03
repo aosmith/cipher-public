@@ -85,7 +85,6 @@
             <ul id="primary-nav" class="nav-list">
               <li><a href="#overview">Overview</a></li>
               <li><a href="#features">Features</a></li>
-              <li><a href="#token-economy">Token Economy</a></li>
               <li><a href="#apps">Download</a></li>
               <li><a href="#get-started" class="cta-link">Get Started</a></li>
             </ul>
@@ -104,7 +103,7 @@
       <section class="hero" id="overview">
         <div class="container hero-grid">
           <div>
-            <span class="badge">BETA • Open Source • v0.10.1</span>
+            <span class="badge">BETA • Open Source • v0.13.3</span>
             <h1>Encrypted peer-to-peer social platform.</h1>
             <p class="lead">Share posts, photos, and messages directly with friends. Built-in protection against spam and abuse. All content is encrypted end-to-end with no central servers.</p>
             <div class="hero-actions">
@@ -158,8 +157,8 @@
             </article>
             <article class="feature">
               <div class="feature-icon">👤</div>
-              <h3>Reputation system</h3>
-              <p>Build reputation over time. Good actors are rewarded with better network performance.</p>
+              <h3>User control</h3>
+              <p>You own your data. Delete posts, leave communities, or remove friends anytime.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">📱</div>
@@ -173,49 +172,49 @@
             </article>
             <article class="feature">
               <div class="feature-icon">🚀</div>
-              <h3>Self-regulating network</h3>
-              <p>Token mechanics naturally prevent spam and abuse without central moderation.</p>
+              <h3>Community-focused</h3>
+              <p>Free platform built for users, not for profit. No ads, no tracking, no monetization.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="token-economy">
+      <section class="section" id="why-use">
         <div class="container">
           <div class="section-header">
-            <h2>Abuse Prevention</h2>
-            <p class="section-subtitle">Built-in protection keeps the network safe and usable for everyone</p>
+            <h2>Why use Cipher</h2>
+            <p class="section-subtitle">Free, secure, and completely open source</p>
           </div>
           <div class="feature-grid">
             <article class="feature">
-              <div class="feature-icon">💰</div>
-              <h3>Getting started</h3>
-              <p>New users receive tokens to start using the network immediately. No payment required.</p>
+              <div class="feature-icon">🆓</div>
+              <h3>Completely free</h3>
+              <p>No subscriptions, no tokens, no payments. Cipher is free to use forever.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">🛡️</div>
-              <h3>Spam protection</h3>
-              <p>Small token costs prevent bulk spam while keeping normal messaging free for everyday use.</p>
+              <h3>Privacy by design</h3>
+              <p>All content encrypted locally before transmission. Only recipients can decrypt messages.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">⚡</div>
-              <h3>Fast messaging</h3>
-              <p>Direct connections between friends enable instant, private communication.</p>
+              <h3>Direct connections</h3>
+              <p>Peer-to-peer architecture means faster messaging without central servers.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">💎</div>
-              <h3>Fair usage</h3>
-              <p>Built-in limits prevent any single user from overwhelming the network.</p>
+              <div class="feature-icon">🌍</div>
+              <h3>Truly decentralized</h3>
+              <p>No central authority. Your data stays on your device, under your control.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">⛏️</div>
-              <h3>Earn tokens</h3>
-              <p>Active users can earn additional tokens through network participation.</p>
+              <div class="feature-icon">🏘️</div>
+              <h3>Communities</h3>
+              <p>Create and join communities to connect with like-minded people.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">🤖</div>
-              <h3>Bot protection</h3>
-              <p>Advanced detection prevents automated accounts and fake users.</p>
+              <div class="feature-icon">📂</div>
+              <h3>Secure file sharing</h3>
+              <p>Share photos and files directly with friends, encrypted end-to-end.</p>
             </article>
           </div>
         </div>
@@ -236,7 +235,7 @@
                 <h3>Windows</h3>
               </article>
             </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher-v0.10.1-universal.dmg" class="platform-card">
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/latest.dmg" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/apple.svg" alt="Apple">
@@ -252,7 +251,7 @@
                 <h3>Linux</h3>
               </article>
             </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher-v0.10.1-release.apk" class="platform-card">
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/latest.apk" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/android.svg" alt="Android">
@@ -279,7 +278,7 @@
             <p>Cipher is in beta. Download it, try it out, and let us know what you think.</p>
           </div>
           <div class="callout-actions">
-            <a class="button primary" href="https://github.com/aosmith/cipher">Download</a>
+            <a class="button primary" id="downloadButton" href="https://github.com/aosmith/cipher">Download</a>
             <a class="button secondary" href="https://github.com/aosmith/cipher">View source code</a>
           </div>
         </div>
@@ -303,5 +302,38 @@
       </div>
     </footer>
   </div>
+  <script>
+    // OS detection for download button
+    (function() {
+      const downloadBtn = document.getElementById('downloadButton');
+      if (!downloadBtn) return;
+
+      const userAgent = navigator.userAgent.toLowerCase();
+      const platform = navigator.platform.toLowerCase();
+
+      let downloadUrl = 'https://github.com/aosmith/cipher';
+      let downloadText = 'Download';
+
+      if (/android/.test(userAgent)) {
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/latest.apk';
+        downloadText = 'Download for Android';
+      } else if (/iphone|ipad|ipod/.test(userAgent)) {
+        downloadUrl = 'https://github.com/aosmith/cipher';
+        downloadText = 'iOS (Coming Soon)';
+      } else if (/mac/.test(platform) || /macintosh/.test(userAgent)) {
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/latest.dmg';
+        downloadText = 'Download for macOS';
+      } else if (/win/.test(platform)) {
+        downloadUrl = 'https://github.com/aosmith/cipher';
+        downloadText = 'Windows (Coming Soon)';
+      } else if (/linux/.test(platform)) {
+        downloadUrl = 'https://github.com/aosmith/cipher';
+        downloadText = 'Linux (Coming Soon)';
+      }
+
+      downloadBtn.href = downloadUrl;
+      downloadBtn.textContent = downloadText;
+    })();
+  </script>
 </body>
 </html>
