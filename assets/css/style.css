@@ -435,12 +435,12 @@ h3 {
 }
 
 .apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2.618rem;
   max-width: 1000px;
   margin: 0 auto;
-  justify-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 1200px) {
