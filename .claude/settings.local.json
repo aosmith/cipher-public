@@ -17,7 +17,8 @@
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
       "Bash(git log:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git describe:*)"
     ],
     "deny": [],
     "ask": []
