@@ -159,11 +159,13 @@ body {
 }
 
 .brand-icon {
-  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   margin-right: 0.65rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0.5rem;
 }
 
 .brand-name {
