@@ -233,7 +233,7 @@
             <p class="section-subtitle">Download Cipher for your device</p>
           </div>
           <div class="apps-grid">
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/Cipher.dmg" class="platform-card">
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher.dmg" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/apple.svg" alt="Apple">
@@ -242,7 +242,7 @@
                 <p class="platform-arch">(arm64)</p>
               </article>
             </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/Cipher.AppImage" class="platform-card">
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.AppImage" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/linux.svg" alt="Linux">
@@ -251,7 +251,7 @@
                 <p class="platform-arch">(AppImage)</p>
               </article>
             </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/Cipher.deb" class="platform-card">
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/linux.svg" alt="Linux">
@@ -260,7 +260,7 @@
                 <p class="platform-arch">(deb)</p>
               </article>
             </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/Cipher.apk" class="platform-card">
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/android.svg" alt="Android">
@@ -317,13 +317,13 @@
       let downloadText = 'Download';
 
       if (/android/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/Cipher.apk';
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk';
         downloadText = 'Download for Android';
       } else if (/mac/.test(platform) || /macintosh/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/Cipher.dmg';
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher.dmg';
         downloadText = 'Download for macOS (ARM)';
       } else if (/linux/.test(platform)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/Cipher.AppImage';
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.AppImage';
         downloadText = 'Download for Linux';
       }
 
