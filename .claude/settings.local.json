@@ -18,7 +18,13 @@
       "Bash(xargs kill:*)",
       "Bash(git log:*)",
       "Bash(grep:*)",
-      "Bash(git describe:*)"
+      "Bash(git describe:*)",
+      "Bash(find:*)",
+      "Bash(identify:*)",
+      "Bash(open /Users/alex/Development/cipher-public/generate-social-card.html)",
+      "Bash(open:*)",
+      "Read(//tmp/**)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

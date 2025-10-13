@@ -105,7 +105,7 @@
       <section class="hero" id="overview">
         <div class="container hero-grid">
           <div>
-            <span class="badge">BETA • Open Source • v0.18.7</span>
+            <span class="badge">BETA • Open Source • v0.18.8</span>
             <h1>Encrypted<br>peer-to-peer<br>social platform.</h1>
             <p class="lead">Share posts, photos, and messages directly with friends. Built-in protection against spam and abuse. All content is encrypted end-to-end with no central servers.</p>
             <div class="hero-actions">
@@ -242,22 +242,22 @@
                 <p class="platform-arch">(arm64)</p>
               </article>
             </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.AppImage" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/linux.svg" alt="Linux">
-                </div>
-                <h3>Linux</h3>
-                <p class="platform-arch">(AppImage)</p>
-              </article>
-            </a>
             <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb" class="platform-card">
               <article>
                 <div class="platform-icon">
                   <img src="assets/icons/platforms/linux.svg" alt="Linux">
                 </div>
                 <h3>Linux</h3>
-                <p class="platform-arch">(deb)</p>
+                <p class="platform-arch">(deb arm64)</p>
+              </article>
+            </a>
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.rpm" class="platform-card">
+              <article>
+                <div class="platform-icon">
+                  <img src="assets/icons/platforms/linux.svg" alt="Linux">
+                </div>
+                <h3>Linux</h3>
+                <p class="platform-arch">(rpm arm64)</p>
               </article>
             </a>
             <a href="https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk" class="platform-card">
@@ -323,8 +323,8 @@
         downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher.dmg';
         downloadText = 'Download for macOS (ARM)';
       } else if (/linux/.test(platform)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.AppImage';
-        downloadText = 'Download for Linux';
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb';
+        downloadText = 'Download for Linux (ARM64)';
       }
 
       downloadBtn.href = downloadUrl;
