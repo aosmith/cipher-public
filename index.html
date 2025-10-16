@@ -41,7 +41,7 @@
     "description": "Secure social platform with end-to-end encryption and built-in abuse prevention system",
     "url": "https://cipher.social",
     "applicationCategory": "SocialNetworkingApplication",
-    "operatingSystem": ["macOS", "Linux", "Android"],
+    "operatingSystem": ["macOS", "Windows", "Linux", "Android", "iOS"],
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -105,7 +105,7 @@
       <section class="hero" id="overview">
         <div class="container hero-grid">
           <div>
-            <span class="badge">BETA • Open Source • v0.18.8</span>
+            <span class="badge">BETA • Open Source • v0.22.0</span>
             <h1>Encrypted<br>peer-to-peer<br>social platform.</h1>
             <p class="lead">Share posts, photos, and messages directly with friends. Built-in protection against spam and abuse. All content is encrypted end-to-end with no central servers.</p>
             <div class="hero-actions">
@@ -121,23 +121,23 @@
           </div>
           <div class="hero-card">
             <h2>How it works</h2>
-            <p>Install the app on your desktop or mobile device. Posts, photos, and messages are encrypted locally before transmission and sent directly to friends via WebRTC.</p>
+            <p>Install the app on your desktop or mobile device. Posts, photos, and messages are encrypted locally before transmission and sent directly to friends via peer-to-peer connections.</p>
             <dl>
               <div>
                 <dt>Encryption</dt>
-                <dd>All content encrypted with recipient's public key</dd>
+                <dd>Ed25519 signing, X25519 key exchange, ChaCha20Poly1305 encryption</dd>
               </div>
               <div>
                 <dt>Transport</dt>
-                <dd>Direct P2P connections via libp2p protocols</dd>
+                <dd>Direct P2P connections using iroh protocols over QUIC</dd>
               </div>
               <div>
                 <dt>Discovery</dt>
-                <dd>Connect via DHT, relay servers, or manual peer exchange</dd>
+                <dd>Decentralized peer discovery via DHT and relay servers</dd>
               </div>
               <div>
                 <dt>Storage</dt>
-                <dd>Stored locally on your device, never in the cloud</dd>
+                <dd>Local SQLite databases on your devices with P2P sync, never in the cloud</dd>
               </div>
             </dl>
           </div>
@@ -168,8 +168,8 @@
             </article>
             <article class="feature">
               <div class="feature-icon">📱</div>
-              <h3>Native first</h3>
-              <p>Built for performance and security.</p>
+              <h3>Native performance</h3>
+              <p>Built with Rust and Tauri for fast, secure native apps across all platforms.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">⚡</div>
@@ -239,7 +239,16 @@
                   <img src="assets/icons/platforms/apple.svg" alt="Apple">
                 </div>
                 <h3>macOS</h3>
-                <p class="platform-arch">(arm64)</p>
+                <p class="platform-arch">(Universal)</p>
+              </article>
+            </a>
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/windows/latest/Cipher.msi" class="platform-card">
+              <article>
+                <div class="platform-icon">
+                  <img src="assets/icons/platforms/windows.svg" alt="Windows">
+                </div>
+                <h3>Windows</h3>
+                <p class="platform-arch">(x64)</p>
               </article>
             </a>
             <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb" class="platform-card">
@@ -248,16 +257,7 @@
                   <img src="assets/icons/platforms/linux.svg" alt="Linux">
                 </div>
                 <h3>Linux</h3>
-                <p class="platform-arch">(deb arm64)</p>
-              </article>
-            </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.rpm" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/linux.svg" alt="Linux">
-                </div>
-                <h3>Linux</h3>
-                <p class="platform-arch">(rpm arm64)</p>
+                <p class="platform-arch">(ARM64)</p>
               </article>
             </a>
             <a href="https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk" class="platform-card">
@@ -266,7 +266,16 @@
                   <img src="assets/icons/platforms/android.svg" alt="Android">
                 </div>
                 <h3>Android</h3>
-                <p class="platform-arch">(arm64)</p>
+                <p class="platform-arch">(Universal)</p>
+              </article>
+            </a>
+            <a href="https://github.com/aosmith/cipher/raw/main/releases/ios/latest/Cipher.ipa" class="platform-card">
+              <article>
+                <div class="platform-icon">
+                  <img src="assets/icons/platforms/phone.svg" alt="iOS">
+                </div>
+                <h3>iOS</h3>
+                <p class="platform-arch">(TestFlight)</p>
               </article>
             </a>
           </div>
@@ -316,15 +325,21 @@
       let downloadUrl = 'https://github.com/aosmith/cipher';
       let downloadText = 'Download';
 
-      if (/android/.test(userAgent)) {
+      if (/iphone|ipad|ipod/.test(userAgent)) {
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/ios/latest/Cipher.ipa';
+        downloadText = 'Download for iOS';
+      } else if (/android/.test(userAgent)) {
         downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk';
         downloadText = 'Download for Android';
       } else if (/mac/.test(platform) || /macintosh/.test(userAgent)) {
         downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher.dmg';
-        downloadText = 'Download for macOS (ARM)';
+        downloadText = 'Download for macOS';
+      } else if (/win/.test(platform) || /windows/.test(userAgent)) {
+        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/windows/latest/Cipher.msi';
+        downloadText = 'Download for Windows';
       } else if (/linux/.test(platform)) {
         downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb';
-        downloadText = 'Download for Linux (ARM64)';
+        downloadText = 'Download for Linux';
       }
 
       downloadBtn.href = downloadUrl;
