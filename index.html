@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cipher - Encrypted Social Network | Private Messaging & File Sharing</title>
-  <meta name="description" content="Secure social platform with end-to-end encryption. Share posts, photos, and messages privately. Anti-spam protection built-in. No data collection, open source." />
-  <meta name="keywords" content="encrypted social network, private messaging, secure file sharing, peer to peer, open source social media, privacy focused, spam prevention, abuse prevention">
+  <meta name="description" content="Local-first, serverless social network with end-to-end encryption. 24-word recovery phrase authentication, forward secrecy, and peer-to-peer networking. No data collection, open source." />
+  <meta name="keywords" content="encrypted social network, private messaging, secure file sharing, peer to peer, open source social media, privacy focused, recovery phrase, forward secrecy, local-first, zero telemetry">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cipher.social/">
   <meta property="og:title" content="Cipher - Encrypted Social Network">
-  <meta property="og:description" content="Secure social platform with end-to-end encryption. Share posts, photos, and messages privately with friends.">
+  <meta property="og:description" content="Local-first, serverless social network with end-to-end encryption. Zero telemetry, forward secrecy, peer-to-peer.">
   <meta property="og:image" content="https://cipher.social/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://cipher.social/">
   <meta property="twitter:title" content="Cipher - Encrypted Social Network">
-  <meta property="twitter:description" content="Secure social platform with end-to-end encryption. Share posts, photos, and messages privately with friends.">
+  <meta property="twitter:description" content="Local-first, serverless social network with end-to-end encryption. Zero telemetry, forward secrecy, peer-to-peer.">
   <meta property="twitter:image" content="https://cipher.social/assets/social-card.png">
   <link rel="canonical" href="https://cipher.social/">
 
@@ -38,7 +38,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Cipher",
-    "description": "Secure social platform with end-to-end encryption and built-in abuse prevention system",
+    "description": "Local-first, serverless social network with end-to-end encryption, 24-word recovery phrase authentication, and peer-to-peer networking",
     "url": "https://cipher.social",
     "applicationCategory": "SocialNetworkingApplication",
     "operatingSystem": ["macOS", "Windows", "Linux", "Android", "iOS"],
@@ -54,13 +54,14 @@
     },
     "screenshot": "https://cipher.social/assets/icons/icon.png",
     "featureList": [
-      "End-to-end encryption",
-      "Peer-to-peer networking",
-      "Abuse prevention system",
-      "Spam protection",
-      "Cross-platform support",
-      "Open source",
-      "Privacy focused"
+      "End-to-end encryption (XChaCha20Poly1305)",
+      "24-word recovery phrase authentication",
+      "Forward secrecy with ephemeral keys",
+      "Peer-to-peer networking (Iroh)",
+      "Local-first SQLite storage",
+      "Zero telemetry",
+      "Cross-platform (macOS, Windows, Linux, Android, iOS)",
+      "Open source (AGPL-3.0)"
     ]
   }
   </script>
@@ -105,7 +106,7 @@
       <section class="hero" id="overview">
         <div class="container hero-grid">
           <div>
-            <span class="badge">BETA • Open Source • v0.22.0</span>
+            <span class="badge">BETA • Open Source • v0.0.6</span>
             <h1>Encrypted<br>peer-to-peer<br>social platform.</h1>
             <p class="lead">Share posts, photos, and messages directly with friends. Built-in protection against spam and abuse. All content is encrypted end-to-end with no central servers.</p>
             <div class="hero-actions">
@@ -121,23 +122,23 @@
           </div>
           <div class="hero-card">
             <h2>How it works</h2>
-            <p>Install the app on your desktop or mobile device. Posts, photos, and messages are encrypted locally before transmission and sent directly to friends via peer-to-peer connections.</p>
+            <p>Install the app on your desktop or mobile device. On first launch, a 24-word recovery phrase is generated. All your keys are derived from this phrase, and messages are encrypted locally before being sent peer-to-peer.</p>
             <dl>
               <div>
+                <dt>Identity</dt>
+                <dd>24-word BIP39 recovery phrase generates deterministic Ed25519 keys</dd>
+              </div>
+              <div>
                 <dt>Encryption</dt>
-                <dd>Ed25519 signing, X25519 key exchange, ChaCha20Poly1305 encryption</dd>
+                <dd>XChaCha20Poly1305 with ephemeral X25519 keys for forward secrecy</dd>
               </div>
               <div>
                 <dt>Transport</dt>
-                <dd>Direct P2P connections using iroh protocols over QUIC</dd>
-              </div>
-              <div>
-                <dt>Discovery</dt>
-                <dd>Decentralized peer discovery via DHT and relay servers</dd>
+                <dd>Direct P2P connections using Iroh gossip protocol over QUIC</dd>
               </div>
               <div>
                 <dt>Storage</dt>
-                <dd>Local SQLite databases on your devices with P2P sync, never in the cloud</dd>
+                <dd>Local SQLite database on your device, never in the cloud</dd>
               </div>
             </dl>
           </div>
@@ -154,17 +155,22 @@
             <article class="feature">
               <div class="feature-icon">🔐</div>
               <h3>End-to-end encryption</h3>
-              <p>Posts, photos, and messages are encrypted locally. Only recipients can decrypt them.</p>
+              <p>All messages encrypted with XChaCha20Poly1305. Only recipients can decrypt them.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🔑</div>
+              <h3>Recovery phrase auth</h3>
+              <p>24-word mnemonic generates your keys. No passwords, no accounts to hack.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">🌐</div>
               <h3>Peer-to-peer networking</h3>
-              <p>Direct connections between devices. No central servers route content.</p>
+              <p>Direct connections via Iroh gossip protocol. No central servers.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">👤</div>
-              <h3>User control</h3>
-              <p>You own your data. Delete posts, leave communities, or remove friends anytime.</p>
+              <div class="feature-icon">🛡️</div>
+              <h3>Forward secrecy</h3>
+              <p>Ephemeral keys per message. Past messages stay safe even if keys are compromised.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">📱</div>
@@ -174,12 +180,7 @@
             <article class="feature">
               <div class="feature-icon">⚡</div>
               <h3>Open source</h3>
-              <p>Full source code available on GitHub for auditing and transparency.</p>
-            </article>
-            <article class="feature">
-              <div class="feature-icon">🚀</div>
-              <h3>Community-focused</h3>
-              <p>Free platform built for users, not for profit. No ads, no tracking, no monetization.</p>
+              <p>AGPL-3.0 licensed. Full source code available for auditing.</p>
             </article>
           </div>
         </div>
@@ -189,33 +190,33 @@
         <div class="container">
           <div class="section-header">
             <h2>Why use Cipher</h2>
-            <p class="section-subtitle">Free, secure, and completely open source</p>
+            <p class="section-subtitle">Local-first, serverless social networking</p>
           </div>
           <div class="feature-grid">
             <article class="feature">
               <div class="feature-icon">🆓</div>
               <h3>Completely free</h3>
-              <p>No subscriptions, no tokens, no payments. Cipher is free to use forever.</p>
+              <p>No subscriptions, no tokens, no payments. Free forever.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">🛡️</div>
-              <h3>Privacy by design</h3>
-              <p>All content encrypted locally before transmission. Only recipients can decrypt messages.</p>
+              <div class="feature-icon">🚫</div>
+              <h3>Zero telemetry</h3>
+              <p>No tracking, no analytics, no data collection. We don't know who you are.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">⚡</div>
-              <h3>Direct connections</h3>
-              <p>Peer-to-peer architecture means faster messaging without central servers.</p>
+              <div class="feature-icon">💾</div>
+              <h3>Local-first</h3>
+              <p>All data stored locally in SQLite. You own your data completely.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">🌍</div>
               <h3>Truly decentralized</h3>
-              <p>No central authority. Your data stays on your device, under your control.</p>
+              <p>DHT-based peer discovery. No central authority or servers.</p>
             </article>
             <article class="feature">
-              <div class="feature-icon">🏘️</div>
-              <h3>Communities</h3>
-              <p>Create and join communities to connect with like-minded people.</p>
+              <div class="feature-icon">🔄</div>
+              <h3>Multi-device sync</h3>
+              <p>Use the same recovery phrase on multiple devices to sync your account.</p>
             </article>
             <article class="feature">
               <div class="feature-icon">📂</div>
