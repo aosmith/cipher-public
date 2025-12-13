@@ -230,53 +230,17 @@
       <section class="section alt" id="apps">
         <div class="container">
           <div class="section-header">
-            <h2>Available platforms</h2>
-            <p class="section-subtitle">Download Cipher for your device</p>
+            <h2>Get Cipher</h2>
+            <p class="section-subtitle">Available for macOS, Windows, Linux, Android, and iOS</p>
           </div>
-          <div class="apps-grid">
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher.dmg" class="platform-card">
+          <div class="github-download">
+            <a href="https://github.com/aosmith/cipher" class="platform-card">
               <article>
                 <div class="platform-icon">
-                  <img src="assets/icons/platforms/apple.svg" alt="Apple">
+                  <img src="assets/icons/github.svg" alt="GitHub">
                 </div>
-                <h3>macOS</h3>
-                <p class="platform-arch">(Universal)</p>
-              </article>
-            </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/windows/latest/Cipher.msi" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/windows.svg" alt="Windows">
-                </div>
-                <h3>Windows</h3>
-                <p class="platform-arch">(x64)</p>
-              </article>
-            </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/linux.svg" alt="Linux">
-                </div>
-                <h3>Linux</h3>
-                <p class="platform-arch">(ARM64)</p>
-              </article>
-            </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/android.svg" alt="Android">
-                </div>
-                <h3>Android</h3>
-                <p class="platform-arch">(Universal)</p>
-              </article>
-            </a>
-            <a href="https://github.com/aosmith/cipher/raw/main/releases/ios/latest/Cipher.ipa" class="platform-card">
-              <article>
-                <div class="platform-icon">
-                  <img src="assets/icons/platforms/phone.svg" alt="iOS">
-                </div>
-                <h3>iOS</h3>
-                <p class="platform-arch">(TestFlight)</p>
+                <h3>GitHub</h3>
+                <p class="platform-arch">View releases</p>
               </article>
             </a>
           </div>
@@ -290,7 +254,7 @@
             <p>Cipher is in beta. Download it, try it out, and let us know what you think.</p>
           </div>
           <div class="callout-actions">
-            <a class="button primary" id="downloadButton" href="https://github.com/aosmith/cipher">Download</a>
+            <a class="button primary" href="https://github.com/aosmith/cipher">Download</a>
             <a class="button secondary" href="https://github.com/aosmith/cipher">View source code</a>
           </div>
         </div>
@@ -314,38 +278,5 @@
       </div>
     </footer>
   </div>
-  <script>
-    // OS detection for download button
-    (function() {
-      const downloadBtn = document.getElementById('downloadButton');
-      if (!downloadBtn) return;
-
-      const userAgent = navigator.userAgent.toLowerCase();
-      const platform = navigator.platform.toLowerCase();
-
-      let downloadUrl = 'https://github.com/aosmith/cipher';
-      let downloadText = 'Download';
-
-      if (/iphone|ipad|ipod/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/ios/latest/Cipher.ipa';
-        downloadText = 'Download for iOS';
-      } else if (/android/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/android/latest/Cipher.apk';
-        downloadText = 'Download for Android';
-      } else if (/mac/.test(platform) || /macintosh/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/macos/latest/Cipher.dmg';
-        downloadText = 'Download for macOS';
-      } else if (/win/.test(platform) || /windows/.test(userAgent)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/windows/latest/Cipher.msi';
-        downloadText = 'Download for Windows';
-      } else if (/linux/.test(platform)) {
-        downloadUrl = 'https://github.com/aosmith/cipher/raw/main/releases/linux/latest/Cipher.deb';
-        downloadText = 'Download for Linux';
-      }
-
-      downloadBtn.href = downloadUrl;
-      downloadBtn.textContent = downloadText;
-    })();
-  </script>
 </body>
 </html>

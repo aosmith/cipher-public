@@ -68,6 +68,7 @@ body {
 
 .theme-checkbox:checked ~ .site .feature,
 .theme-checkbox:checked ~ .site .apps-grid article,
+.theme-checkbox:checked ~ .site .github-download article,
 .theme-checkbox:checked ~ .site .security-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -75,7 +76,8 @@ body {
 }
 
 .theme-checkbox:checked ~ .site .feature:hover,
-.theme-checkbox:checked ~ .site .feature:focus-within {
+.theme-checkbox:checked ~ .site .feature:focus-within,
+.theme-checkbox:checked ~ .site .github-download .platform-card:hover article {
   border-color: rgba(233, 69, 96, 0.5);
 }
 
@@ -442,6 +444,11 @@ h3 {
   gap: 2.618rem;
   max-width: 1000px;
   margin: 0 auto;
+  justify-content: center;
+}
+
+.github-download {
+  display: flex;
   justify-content: center;
 }
 
