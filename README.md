@@ -35,4 +35,3 @@ This repository uses GitHub Pages with an Actions workflow and a `CNAME` file fo
 To test locally before pushing, run a static server (e.g., `python3 -m http.server 4000`) and open http://localhost:4000/.
 
 If you maintain a custom domain (e.g., `cipher.social`), add the CNAME in Settings → Pages and create the DNS record (CNAME pointing to `<user>.github.io`).
-# cipher-public
